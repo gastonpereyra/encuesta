@@ -1,24 +1,38 @@
-// Modulos
+// Modulos React
 import React from 'react';
+// Moduelos Router
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
-const Router = (props) => {
-    return (
-        <div className="App">
-          <header className="App-header">
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
-      );
+// Pages
+import Home from './Home';
+
+// Redux
+import { connect } from 'react-redux';
+// import { actions } from 'react-redux-form';
+// Cargar los Estados
+const mapStateToProps = (state) => {
+    // return { data: state.data };
+  }
+// Cargar las Acciones
+const mapDispatchToProps = (dispatch) => ({
+      // function: (param) => (dispatch(function(param)))
+      // resetForm: () => { dispatch(actions.reset('formName')) }
+  });
+//
+class Router extends React.Component {
+    
+    componentDidMount() {
+        // fetchs
+      }
+
+    render() {
+        return (
+            <Switch>
+              <Route path="/home" component={Home} />
+              <Redirect to="/home" />
+            </Switch>
+        );
+    }
 }
 
-export default Router;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Router));
