@@ -12,6 +12,9 @@ Una simple Web App con varios formularios para que cualquier usuario pueda respo
 Para generar un proyecto de prueba y demostración, los datos no son vendidos ni requeridos a nadie, no tienen otro uso mas que de practica.
 
 ## Creado con ...
+- Bulma
+- Sass
+- Font Awesome
 - React
 - Redux
 - Node
