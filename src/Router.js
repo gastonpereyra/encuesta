@@ -13,7 +13,8 @@ import { chargeI18n } from "./redux/ActionCreators";
 // Cargar los Estados
 const mapStateToProps = (state) => {
     return {
-    i18n: state.i18n
+    i18n: state.i18n,
+    app: state.app
     }
     // return { data: state.data };
   }
@@ -32,9 +33,8 @@ class Router extends React.Component {
       }
 
     render() {
-        console.log(this.props.literals)
         const HomePage = () => (
-            <Home message={this.props.i18n} changeLang={this.props.chargeI18n} />
+            <Home actualLang={this.props.app.lang} messages={this.props.i18n} changeLang={this.props.chargeI18n} />
         )
         return (
             <Switch>

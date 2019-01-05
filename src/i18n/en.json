@@ -1,3 +1,7 @@
-{
-    "home_welcome": "Welcome!"
+{   
+    "en": "English",
+    "es": "Spanish",
+    "home_welcome": "Welcome!",
+    "home_title": "Submits",
+    "home_lang": "The current Language is "
 }

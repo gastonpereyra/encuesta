@@ -1,6 +1,12 @@
 // Action Types
 import * as actions from './ActionTypes';
-// Literal - I18N
+// App General
+const loadAppLang = lang => ({
+  type: actions.APP_LANG,
+  payload: lang
+})
+
+// I18N
 const loadI18n = messages => ({
   type: actions.LOAD_I18N,
   payload: messages,
@@ -10,7 +16,9 @@ const importI18n = (lang) => {
 };
 
 export const chargeI18n = (l = "en") => (dispatch ) => {
-  importI18n(l.split('-')[0]).then(lang => {
+  const langAbbr = l.split('-')[0];
+  importI18n(langAbbr).then(lang => {
     dispatch(loadI18n(lang));
+    dispatch(loadAppLang(langAbbr));
   })
 }

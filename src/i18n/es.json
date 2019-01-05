@@ -1,3 +1,7 @@
 {
-    "home_welcome": "Bienvenidos!"
+    "es": "Español",
+    "en": "Ingles",
+    "home_welcome": "Bienvenidos!",
+    "home_title": "Encuestas",
+    "home_lang": "El Idioma actual es "
 }
