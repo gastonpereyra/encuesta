@@ -1,5 +1,5 @@
 // Action Type
-import { LOAD_I18N, CHANGE_I18N } from './ActionTypes';
+import { LOAD_I18N } from './ActionTypes';
 // Reducer de Literal
 
 export default (state = {}, { type, payload }) => {

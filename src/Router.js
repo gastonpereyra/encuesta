@@ -21,21 +21,20 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
       // function: (param) => (dispatch(function(param)))
       // resetForm: () => { dispatch(actions.reset('formName')) }
-      chargeI18n: () => (dispatch(chargeI18n()))
+      chargeI18n: (lang) => (dispatch(chargeI18n(lang)))
   });
 //
 class Router extends React.Component {
     
     componentDidMount() {
         var lang = navigator.language || navigator.userLanguage;
-        alert(lang);
-        this.props.chargeI18n();
+        this.props.chargeI18n(lang);
       }
 
     render() {
         console.log(this.props.literals)
         const HomePage = () => (
-            <Home message={this.props.i18n} />
+            <Home message={this.props.i18n} changeLang={this.props.chargeI18n} />
         )
         return (
             <Switch>
