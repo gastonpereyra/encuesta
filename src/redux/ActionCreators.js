@@ -5,6 +5,9 @@ const loadAppLang = lang => ({
   type: actions.APP_LANG,
   payload: lang
 })
+export const completeUserData = () => ({
+  type: actions.APP_COMPLETE_USER_DATA
+})
 
 // I18N
 const loadI18n = messages => ({

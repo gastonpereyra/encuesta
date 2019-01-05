@@ -8,7 +8,7 @@ import Home from './Home';
 
 // Redux
 import { connect } from 'react-redux';
-import { chargeI18n } from "./redux/ActionCreators";
+import * as Actions from "./redux/ActionCreators";
 // import { actions } from 'react-redux-form';
 // Cargar los Estados
 const mapStateToProps = (state) => {
@@ -22,7 +22,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
       // function: (param) => (dispatch(function(param)))
       // resetForm: () => { dispatch(actions.reset('formName')) }
-      chargeI18n: (lang) => (dispatch(chargeI18n(lang)))
+      chargeI18n: (lang) => (dispatch(Actions.chargeI18n(lang))),
+      completeUserData: () => (dispatch(Actions.completeUserData()))
   });
 //
 class Router extends React.Component {
@@ -34,7 +35,12 @@ class Router extends React.Component {
 
     render() {
         const HomePage = () => (
-            <Home actualLang={this.props.app.lang} messages={this.props.i18n} changeLang={this.props.chargeI18n} />
+            <Home 
+                actualLang={this.props.app.lang} 
+                messages={this.props.i18n} 
+                changeLang={this.props.chargeI18n} 
+                complete={this.props.completeUserData}
+                />
         )
         return (
             <Switch>
