@@ -3,12 +3,12 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { createForms } from "react-redux-form";
 // Reducers
-import literals from './literalsReducer'
+import i18n from './i18nReducer'
 
 export const Store = ()  => {
     const store = createStore(
         combineReducers({
-            literals,
+            i18n,
             ...createForms({ 
                 feedback: { user: "" }
             })

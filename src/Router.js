@@ -8,11 +8,12 @@ import Home from './Home';
 
 // Redux
 import { connect } from 'react-redux';
+import { chargeI18n } from "./redux/ActionCreators";
 // import { actions } from 'react-redux-form';
 // Cargar los Estados
 const mapStateToProps = (state) => {
     return {
-    literals: state.literals
+    i18n: state.i18n
     }
     // return { data: state.data };
   }
@@ -20,18 +21,21 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
       // function: (param) => (dispatch(function(param)))
       // resetForm: () => { dispatch(actions.reset('formName')) }
+      chargeI18n: () => (dispatch(chargeI18n()))
   });
 //
 class Router extends React.Component {
     
     componentDidMount() {
-        // fetchs
+        var lang = navigator.language || navigator.userLanguage;
+        alert(lang);
+        this.props.chargeI18n();
       }
 
     render() {
         console.log(this.props.literals)
         const HomePage = () => (
-            <Home message={this.props.literals} />
+            <Home message={this.props.i18n} />
         )
         return (
             <Switch>

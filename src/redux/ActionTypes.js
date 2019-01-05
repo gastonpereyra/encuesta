@@ -1,2 +1,4 @@
 // Tipos de Acciones
-export const LOAD_LITERALS = "LOAD_LITERALS";
+// I18N
+export const LOAD_I18N = "LOAD_I18N";
+export const CHANGE_I18N = "CHANGE_I18N";
