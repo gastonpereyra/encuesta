@@ -4,6 +4,8 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom'; 
 // Componentes 
 import Router from './Router';
+import { loadLiterals } from "./redux/ActionCreators";
+import loadLang from "./i18n";
 // Styles
 import './styles/App.scss';
 import 'bulma/css/bulma.min.css';
@@ -11,6 +13,9 @@ import 'bulma/css/bulma.min.css';
 import { Provider } from 'react-redux'; 
 import { Store } from './redux/store';
 const store = Store();
+
+const lang = loadLang();
+store.dispatch(loadLiterals(lang))
 
 const App = (props) => {
     return (

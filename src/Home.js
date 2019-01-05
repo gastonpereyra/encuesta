@@ -6,7 +6,7 @@ const Home = (props) => {
         <div className="hero is-primary is-fullheight">
             <div className="hero-body">
                 <div className="container">
-                    <p>Bienvenidos!</p>
+                    <p>{props.message.home_welcome}</p>
                 </div>
             </div>
         </div>

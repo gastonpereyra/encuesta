@@ -11,6 +11,9 @@ import { connect } from 'react-redux';
 // import { actions } from 'react-redux-form';
 // Cargar los Estados
 const mapStateToProps = (state) => {
+    return {
+    literals: state.literals
+    }
     // return { data: state.data };
   }
 // Cargar las Acciones
@@ -26,9 +29,13 @@ class Router extends React.Component {
       }
 
     render() {
+        console.log(this.props.literals)
+        const HomePage = () => (
+            <Home message={this.props.literals} />
+        )
         return (
             <Switch>
-              <Route path="/home" component={Home} />
+              <Route path="/home" component={HomePage} />
               <Redirect to="/home" />
             </Switch>
         );
