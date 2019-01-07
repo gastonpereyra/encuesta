@@ -25,3 +25,23 @@ export const chargeI18n = (l = "en") => (dispatch ) => {
     dispatch(loadAppLang(langAbbr));
   })
 }
+
+// USER FORM
+const postUser = user => ({
+  type: actions.USER_POST,
+  payload: user
+})
+
+export const addUser= (firstname, lastname, age, genre, continent, zone, colorFavourite) => (dispatch) => {
+  const user = {
+    firstname: firstname,
+    lastname: lastname,
+    age: age,
+    genre: genre,
+    continent: continent,
+    zone: zone,
+    colorFavourite: colorFavourite
+  };
+
+  dispatch(postUser(user));
+}

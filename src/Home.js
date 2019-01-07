@@ -17,12 +17,13 @@ const Home = (props) => {
                     <h1 className="subtitle">{props.messages.home_title}</h1>
                     <h1 className="title">{props.messages.home_welcome}</h1>
                     <p>{props.messages.home_lang+props.messages[props.actualLang]}</p>
+                    <p>{props.user.firstname}</p>
                     <button className="button is-warning" onClick={()=>{props.changeLang("es")}}>{props.messages.es}</button>
                     <button className="button is-warning" onClick={()=>{props.changeLang("en")}}>{props.messages.en}</button>
                     <button className="button is-success" data-target={"userModal"} onClick={toggleModal}>Comenzar</button>
                 </div>
             </div>
-            <UserModal nameId={"userModal"} toggle={toggleModal} />
+            <UserModal nameId={"userModal"} toggle={toggleModal} submitUser={props.submitUser} />
         </div>
     )
 }

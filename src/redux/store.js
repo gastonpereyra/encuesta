@@ -5,14 +5,16 @@ import { createForms } from "react-redux-form";
 // Reducers
 import i18n from './i18nReducer'
 import app from './appReducer';
+import { user, userDefault } from './userReducer';
 
 export const Store = ()  => {
     const store = createStore(
         combineReducers({
             i18n,
             app,
+            user,
             ...createForms({ 
-                feedback: { user: "" }
+                userForm: userDefault
             })
         }),
         applyMiddleware(thunk)

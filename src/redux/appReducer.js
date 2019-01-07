@@ -4,8 +4,9 @@ import { APP_LANG, APP_ACTIVE_NAVBAR, APP_DESACTIVE_NAVBAR, APP_COMPLETE_USER_DA
 
 export default (state = {
     lang: "",
+    username: "",
     navBar: false,
-    userData: false
+    userForm: false
     }, { type, payload }) => {
         switch (type) {
         case APP_LANG:
