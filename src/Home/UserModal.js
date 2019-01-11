@@ -2,6 +2,7 @@
 import React from 'react';
 import { Form } from 'react-redux-form'; 
 import {FieldText, FieldNumber, FieldRadio, FieldSelect} from '../FormComponents/FieldsHorizontal';
+import {FieldButtons} from '../FormComponents/Field';
 
 
 export const UserModal = (props) => {
@@ -34,6 +35,7 @@ export const UserModal = (props) => {
                             <FieldSelect label="Continente" nameId="continent" items={["America del Sur", "Europa", "Otro"]}  messages={valMessages} required />
                             <FieldSelect label="Tipo de Zona" nameId="zone" items={["Ciudad grande", "Pueblo", "Otro"]} messages={valMessages} required />
                             <FieldText label="Color Favorito" nameId="colorFavourite" messages={valMessages} required/>
+                            <FieldButtons label="Genero"  nameId="genres" items={["Hombre","Mujer","No-Binario"]}  messages={valMessages} required/>
                             <div className="field is-grouped is-grouped-centered">
                                 <div className="control">
                                     <button className="button is-success" type="submit">Avanzar</button>
