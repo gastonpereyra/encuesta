@@ -128,9 +128,17 @@ export const FieldRadio = ({label, items, nameId, required, messages}) => {
 export const FieldButtons = ({label, items, nameId, required, messages}) => {
 
     const onClick = (event) => {
-        const buttons = document.getElementById(event.target.dataset.target).children;
-        //const buttonCheck = buttons.filter( b => b.children.input.checked);
-        console.log(buttons[0]);
+        const buttons = [...document.getElementById(event.target.dataset.target).children];
+        buttons.forEach( b => {
+            if (b.children[0].checked) {
+                b.children[0].classList.add('is-success');
+                b.children[1].classList.add('is-outlined');
+            } else {
+                b.children[0].classList.remove('is-success');
+                b.children[1].classList.remove('is-outlined');
+            }
+        });
+        
     }
 
     const validators = {
@@ -143,9 +151,9 @@ export const FieldButtons = ({label, items, nameId, required, messages}) => {
 
     const buttons = items.map( (label, i) => (
         <label className="radio buttons is-groupped has-addons"  key={`${label}-${i}`}>
-            <Control.radio data-target={nameId} model={"."+nameId} name={nameId} value={label} 
+            <Control.radio className="button is-dark" data-target={nameId} model={"."+nameId} name={nameId} value={label} 
                             validators={validators} placeholder={label} onClick={onClick}/>
-            <p className="button is-primary">{label}</p>
+            <p className="button is-info">{label}</p>
         </label>
     ));
 
